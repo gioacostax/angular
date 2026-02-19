@@ -1,0 +1,30 @@
+@if (chuck.joke.isPending()) {
+<p-progressbar
+  aria-label="Loading joke"
+  mode="indeterminate"
+  [style]="{ height: '0.3rem' }"
+  class="w-90"
+/>
+} @else {
+<section>
+  <p
+    aria-live="polite"
+    class="max-w-lg rounded bg-slate-700 p-4"
+  >
+    {{ chuck.joke.data()?.value }}
+  </p>
+  <button
+    pButton
+    pRipple
+    severity="primary"
+    type="button"
+    (click)="chuck.joke.refetch()"
+    [disabled]="chuck.joke.isFetching()"
+    [loading]="chuck.joke.isFetching()"
+    [attr.aria-busy]="chuck.joke.isFetching()"
+    class="mt-4"
+  >
+    Refresh
+  </button>
+</section>
+}

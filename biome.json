@@ -1,0 +1,29 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.1/schema.json",
+  "extends": ["./shared/config/_biome.json"],
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              { "source": ["@angular/**", "rxjs", "rxjs/**"], "type": true },
+              { "source": ["@angular/**", "rxjs", "rxjs/**"], "type": false },
+              ":BLANK_LINE:",
+              { "source": [":PACKAGE:"], "type": true },
+              { "source": [":PACKAGE:"], "type": false },
+              ":BLANK_LINE:",
+              { "source": [":ALIAS:"], "type": true },
+              { "source": [":ALIAS:"], "type": false },
+              ":BLANK_LINE:",
+              { "source": [":PATH:"], "type": true },
+              { "source": [":PATH:"], "type": false }
+            ],
+            "identifierOrder": "natural"
+          }
+        }
+      }
+    }
+  }
+}

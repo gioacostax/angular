@@ -1,0 +1,31 @@
+/**
+ * This file can be used to define Typescript configuration,
+ * more info in https://www.typescriptlang.org/tsconfig/
+ * To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options.
+ */
+
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./shared/config/_tsconfig.json",
+  "compilerOptions": {
+    "noPropertyAccessFromIndexSignature": true, // Angular compat
+    "allowImportingTsExtensions": false, // Angular compat
+    "noEmit": false, // Angular compat
+    "isolatedModules": false, // Angular compat
+    "allowJs": false, // Angular compat (tests)
+    "paths": {
+      "@/*": ["./src/*"],
+      "@public/*": ["./public/*"],
+      "@shared/*": ["./shared/*"]
+    }
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true,
+    "fullTemplateTypeCheck": true
+  },
+  "exclude": ["./shared/config/**/*"],
+  "include": ["./shared/**/*", "./src/**/*", "./*"],
+}
